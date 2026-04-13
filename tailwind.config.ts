@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Bebas Neue"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        heading: ['"Poppins"', 'sans-serif'],
+        body: ['"Nunito"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
