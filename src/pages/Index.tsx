@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ShoppingCart, User, Home, UtensilsCrossed, ClipboardList, MapPin, Search, ArrowLeft, Plus, Minus, Trash2, Phone, Star, Clock, X, ChevronRight, Truck, CreditCard, Wallet, Banknote, Edit, Trash, Check } from "lucide-react";
 
 // ─── DATA ───────────────────────────────────────────────────────────────────────
@@ -228,7 +228,7 @@ const CodeCrave = () => {
           CodeCrave
         </button>
         <div className="hidden md:flex items-center gap-6">
-          {([["home", "Home", Home], ["restaurants", "Restaurants", UtensilsCrossed], ["profile", "My Orders", ClipboardList], ["profile", "Profile", User]] as [Page, string, any][]).map(([p, label, Icon], i) => (
+          {([["home", "Home", Home], ["restaurants", "Restaurants", UtensilsCrossed], ["profile", "My Orders", ClipboardList], ["profile", "Profile", User]] as [Page, string, React.ElementType][]).map(([p, label, Icon], i) => (
             <button key={i} onClick={() => navigate(p)} className={`flex items-center gap-1.5 text-sm font-heading font-semibold transition-colors hover:text-primary ${page === p ? "text-primary" : "text-muted-foreground"}`}>
               <Icon size={16} /> {label}
             </button>
@@ -251,7 +251,7 @@ const CodeCrave = () => {
       {/* Mobile bottom nav */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-xl border-t border-border z-50">
         <div className="flex items-center justify-around py-2">
-          {([["home", "Home", Home], ["restaurants", "Food", UtensilsCrossed], ["cart", "Cart", ShoppingCart], ["tracking", "Track", MapPin], ["profile", "Profile", User]] as [Page, string, any][]).map(([p, label, Icon]) => (
+          {([["home", "Home", Home], ["restaurants", "Food", UtensilsCrossed], ["cart", "Cart", ShoppingCart], ["tracking", "Track", MapPin], ["profile", "Profile", User]] as [Page, string, React.ElementType][]).map(([p, label, Icon]) => (
             <button key={p} onClick={() => navigate(p)} className={`flex flex-col items-center gap-0.5 text-xs font-body transition-colors ${page === p ? "text-primary" : "text-muted-foreground"}`}>
               <Icon size={18} />
               {label}
